@@ -10,7 +10,7 @@
    <jsp:include page="_header.jsp" />
    <jsp:include page="_menu.jsp" /> 
  
-   <div class="page-title">Login</div> 
+   <div class="page-title">Logon</div> 
    <div class="login-container"> 
        <h3>Enter username and password</h3>
        <br>
