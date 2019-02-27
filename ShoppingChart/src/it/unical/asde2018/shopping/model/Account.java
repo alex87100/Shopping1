@@ -15,8 +15,9 @@ public class Account {
 		this.username = username;
 		this.password = password;
 	}
-	
-	public Account(String name,String surname,String email, String address,String phone,String username, String password) {
+
+	public Account(String name, String surname, String email, String address, String phone, String username,
+			String password) {
 		super();
 		this.name = name;
 		this.surname = surname;
@@ -26,7 +27,6 @@ public class Account {
 		this.username = username;
 		this.password = password;
 	}
-
 
 	public String getUsername() {
 		return username;
@@ -42,39 +42,6 @@ public class Account {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((username == null) ? 0 : username.hashCode());
-		return result;
-	}
-	
-	
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Account other = (Account) obj;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		if (username == null) {
-			if (other.username != null)
-				return false;
-		} else if (!username.equals(other.username))
-			return false;
-		return true;
 	}
 
 	public String getName() {
@@ -116,7 +83,36 @@ public class Account {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Account other = (Account) obj;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
+		return true;
+	}
 
 }

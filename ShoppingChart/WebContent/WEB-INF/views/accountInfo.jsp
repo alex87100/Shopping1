@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8"> 
 <title>Account Info</title>
-<link rel="stylesheet" type="text/css" href="resources/styles.css"> 
+<link rel="stylesheet" type="text/css" href="resources/css/styles.css"> 
 </head>
 <body>
     <jsp:include page="_header.jsp" />
@@ -12,12 +12,12 @@
    <div class="page-title">Account Info</div> 
    <div class="account-container">
         <ul>
-	        <li>Name: ${name}</li>
-	        <li>Surname: ${surname}</li>
-	        <li>E-mail: ${email}</li>
-	        <li>Address: ${address}</li>
-	        <li>Phone: ${phone}</li>
-	        <li>UserName: ${user}</li>
+	        <li>Name: ${user.name}</li>
+	        <li>Surname: ${user.surname}</li>
+	        <li>E-mail: ${user.email}</li>
+	        <li>Address: ${user.address}</li>
+	        <li>Phone: ${user.phone}</li>
+	        <li>UserName: ${user.username}</li>
        </ul>
    </div>
  	<!-- Edit Customer Info -->

@@ -5,10 +5,11 @@
     <div class="site-name">Online Shop</div> 
     <div class="header-bar">
      	<c:if test="${user == null}">	   
-	         <a href="${pageContext.request.contextPath}/login">Login</a>
+	         <a href="${pageContext.request.contextPath}/login">Login</a> |
+	         <a href="${pageContext.request.contextPath}/register">Register</a>
        </c:if>
 	   <c:if test="${user != null}">
-	 Hello ${user} | <a href="${pageContext.request.contextPath}/logout">Logout</a>
+	 Hello ${user.username} | <a href="${pageContext.request.contextPath}/logout">Logout</a>
 	   </c:if>	            
     </div>
 </div>

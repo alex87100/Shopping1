@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Shopping Chart</title> 
-<link rel="stylesheet" type="text/css" href="resources/styles.css"> 
+<link rel="stylesheet" type="text/css" href="resources/css/styles.css"> 
  
 </head>
 <body>
@@ -17,22 +17,29 @@
    <fmt:setLocale value="en_US" scope="session"/>
  
    <div class="page-title">My Chart</div>
+   
+   
 
-    <c:if test="${itemCode == null}">
+    <c:if test="${basket == null}">
        <h2>There is no items in Chart</h2> 
    </c:if>
-   <c:if test="${itemCode != null}"> 
-    <div class="product-preview-container">
-       <ul>
-    	   <li><img src="resources/${itemName}.png" height="65" width="65" alt="${itemName}"></li>
-           <li>Code: ${itemCode}</li>
-           <li>Name: ${itemName}</li>
-           <li>Item price: <fmt:formatNumber value="${itemPrice}" type="currency"/></li>           
-           <li><a href="${pageContext.request.contextPath}/shoppingCartRemoveProduct?code=${itemCode}">
-            Delete </a></li>
-            
-       </ul>
-     </div>  
+   <c:if test="${basket != null}"> 
+	   <c:forEach items="${basket}" var="product">
+	       <div class="product-preview-container">
+	           <ul> 
+	        	   <li><img src="resources/images/${product.name}.jpg" height="65" width="65" alt="${product.name}"></li>   
+	               <li>Code: ${product.code}</li>
+	               <li>Name: ${product.name}</li>
+	               <li>Price: <fmt:formatNumber value="${product.price}" type="currency"/></li>
+	               <li><a href="${pageContext.request.contextPath}/shoppingCartRemoveProduct?code=${product.code}"> Delete </a></li>
+	               <!-- li><a
+	                   href="${pageContext.request.contextPath}/buyProduct?code=${prodInfo.code}">
+	                       Buy Now</a></li-->    
+	           </ul>
+	       </div>
+	 
+	   </c:forEach>
+   
        
    </c:if>
    <div style="clear: both"></div>
